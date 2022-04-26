@@ -32,3 +32,7 @@
 .nav a:hover {
     background-color: rgba(119, 135, 195, 0.458);
 }
+
+.nav .active {
+    background-color: rgba(119, 135, 195, 0.458);
+}
