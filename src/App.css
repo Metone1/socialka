@@ -16,22 +16,22 @@
         "n c c";
 }
 
-@media (max-width:740px) {
+.app_wrapper_content {
+    background-color: rgb(215, 215, 215);
+    grid-area: c;
+    border-radius: 5px;
+}
+
+@media (max-width:760px) {
     .app_wrapper {
         grid-template-columns: 3fr 10fr;
     }
 }
 
-@media (max-width:540px) {
+@media (max-width:560px) {
     .app_wrapper {
         grid-template-columns: 4fr 10fr;
         min-width: 440px;
-    }
-}
-
-@media (max-width:740px) {
-    .app_wrapper {
-        grid-template-columns: 3fr 10fr;
     }
 }
 

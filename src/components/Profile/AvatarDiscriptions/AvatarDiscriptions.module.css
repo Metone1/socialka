@@ -3,7 +3,6 @@
     grid-template-columns: 9rem;
     grid-gap: 5px;
     grid-template-areas:
-        "f s"
         "f s";
 }
 
