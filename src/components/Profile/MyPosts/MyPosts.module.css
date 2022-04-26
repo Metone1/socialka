@@ -1,0 +1,18 @@
+.posts {
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+}
+
+.posts h3 {
+    text-align: center;
+    text-transform: uppercase;
+    margin: 5px auto;
+    padding: 5px;
+}
+
+.myNewPost {
+    border: 1px solid black;
+    border-radius: 5px;
+    text-align: center;
+    padding: 5px;
+}

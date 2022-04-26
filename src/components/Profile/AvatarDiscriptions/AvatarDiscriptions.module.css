@@ -1,0 +1,28 @@
+.ava {
+    display: grid;
+    grid-template-columns: 9rem;
+    grid-gap: 5px;
+    grid-template-areas:
+        "f s"
+        "f s";
+}
+
+.photo {
+    grid-area: f;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.img {
+    width: 8rem;
+    height: 10rem;
+    border-radius: 5px;
+    margin: 0.5rem;
+}
+
+.discription {
+    grid-area: s;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 10px;
+}

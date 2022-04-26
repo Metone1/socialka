@@ -1,0 +1,20 @@
+.post {
+    margin-top: 5px;
+    border: 1px solid rgba(241, 151, 151, 0.9);
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.post img {
+    margin: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 15px;
+}
+
+.post p {
+    display: inline;
+    position: relative;
+    bottom: 30px;
+    left: 10px;
+}
