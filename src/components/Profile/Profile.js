@@ -1,30 +1,42 @@
 import Avatar from "./ProfileInfo/ProfileInfo";
 import MyPosts from './MyPosts/MyPosts';
 import OthePost from './OthePost/OthePost';
-import styles from './Profile.module.css';
+// import styles from './Profile.module.css';
 
-const Profile = () => {
+const Profile = (props) => {
 
-    let usersArray = {
-        0: 'https://preview.redd.it/4mc6mm2j3ih41.jpg?auto=webp&s=224ba0734fc5aa1349497ae4b6f8c9d3d9f40dee',
-        1: 'https://preview.redd.it/4mc6mm2j3ih41.jpg?auto=webp&s=224ba0734fc5aa1349497ae4b6f8c9d3d9f40dee',
-        2: 'https://preview.redd.it/4mc6mm2j3ih41.jpg?auto=webp&s=224ba0734fc5aa1349497ae4b6f8c9d3d9f40dee'
-    };
 
-    let messageArray = {
-        0: 'Why nodoby love me?',
-        1: 'Hello',
-        2: 'hi, u know me?'
-    };
+    let posts = [
+        {
+            key: 0,
+            img: 'https://preview.redd.it/4mc6mm2j3ih41.jpg?auto=webp&s=224ba0734fc5aa1349497ae4b6f8c9d3d9f40dee',
+            message: 'Why nodoby love me?',
+            likesCount: 12,
+        },
+        {
+            key: 1,
+            img: 'https://preview.redd.it/4mc6mm2j3ih41.jpg?auto=webp&s=224ba0734fc5aa1349497ae4b6f8c9d3d9f40dee',
+            message: 'Hello',
+            likesCount: 18,
+        },
+        {
+            key: 2,
+            img: 'https://preview.redd.it/4mc6mm2j3ih41.jpg?auto=webp&s=224ba0734fc5aa1349497ae4b6f8c9d3d9f40dee',
+            message: 'hi, u know me?',
+            likesCount: 4,
+        },
+    ];
+
+    let mapPosts = posts.map(post => {
+        return <OthePost key={post.key} img={post.img} message={post.message} likesCount={post.likesCount} />
+    });
 
     return (
         <div>
             <Avatar />
             <MyPosts />
-            <OthePost img={usersArray[0]} message={messageArray[0]} likesCount='4' />
-            <OthePost img={usersArray[1]} message={messageArray[1]} likesCount='5' />
-            <OthePost img={usersArray[2]} message={messageArray[2]} likesCount='7' />
-        </div>
+            {mapPosts}
+        </div >
     );
 }
 
