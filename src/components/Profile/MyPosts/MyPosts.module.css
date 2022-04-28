@@ -16,3 +16,10 @@
     text-align: center;
     padding: 5px;
 }
+
+.myNewPost button {
+    width: 30px;
+    height: 13px;
+    border-radius: 5px;
+    background-color: blueviolet;
+}

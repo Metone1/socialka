@@ -1,6 +1,6 @@
-import styles from './AvatarDiscriptions.module.css';
+import styles from './ProfileInfo.module.css';
 
-const AvatarDiscriptions = () => {
+const ProfileInfo = () => {
     return (
         <div className={styles.ava}>
             <div className={styles.photo}>
@@ -13,4 +13,4 @@ const AvatarDiscriptions = () => {
     );
 }
 
-export default AvatarDiscriptions;
+export default ProfileInfo;

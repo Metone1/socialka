@@ -5,7 +5,7 @@ const MyPosts = () => {
         <div className={styles.posts}>
             <h3>My posts</h3>
             <div className={styles.myNewPost}>
-                create new post
+                create new post <button></button>
             </div>
         </div>
     );

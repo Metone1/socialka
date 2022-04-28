@@ -1,4 +1,4 @@
-import Avatar from "./AvatarDiscriptions/AvatarDiscriptions";
+import Avatar from "./ProfileInfo/ProfileInfo";
 import MyPosts from './MyPosts/MyPosts';
 import OthePost from './OthePost/OthePost';
 import styles from './Profile.module.css';
@@ -6,9 +6,9 @@ import styles from './Profile.module.css';
 const Profile = () => {
 
     let usersArray = {
-        0: 'https://www.egames.news/__export/1616008381220/sites/debate/img/2021/03/17/lana-rhoades_x2x_1.jpg_459955865.jpg',
-        1: 'https://storage.googleapis.com/ares-profile-pictures/hd/officialadrianachechik_-d9d3e10a6ba51980d88924b692ed75a8_hd.jpg',
-        2: 'https://www.trendycow.net/wp-content/uploads/2021/08/Riley-Reid_1-827x1024.jpg'
+        0: 'https://preview.redd.it/4mc6mm2j3ih41.jpg?auto=webp&s=224ba0734fc5aa1349497ae4b6f8c9d3d9f40dee',
+        1: 'https://preview.redd.it/4mc6mm2j3ih41.jpg?auto=webp&s=224ba0734fc5aa1349497ae4b6f8c9d3d9f40dee',
+        2: 'https://preview.redd.it/4mc6mm2j3ih41.jpg?auto=webp&s=224ba0734fc5aa1349497ae4b6f8c9d3d9f40dee'
     };
 
     let messageArray = {
