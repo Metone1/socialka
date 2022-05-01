@@ -15,7 +15,6 @@ const UserDialog = (props) => {
                     {props.message}
                 </div>
             </div>
-
         </div>
     );
 }
