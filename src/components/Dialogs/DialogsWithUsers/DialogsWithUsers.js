@@ -1,7 +1,7 @@
-import styles from './UserDialog.module.css';
+import styles from './DialogsWithUsers.module.css';
 import { NavLink } from 'react-router-dom';
 
-const UserDialog = (props) => {
+const DialogsWithUsers = (props) => {
     return (
         <div className={styles.dialogs}>
             <div className={styles.user_dialog}>
@@ -19,4 +19,4 @@ const UserDialog = (props) => {
     );
 }
 
-export default UserDialog;
+export default DialogsWithUsers;
