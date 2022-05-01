@@ -13,7 +13,7 @@
     font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
 }
 
-.nav img {
+.nav .nav_image {
     width: 30px;
     height: 30px;
     position: relative;

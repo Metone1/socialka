@@ -9,7 +9,7 @@
     min-height: 950px;
     display: grid;
     grid-template-rows: 60px 2fr;
-    grid-template-columns: 2fr 10fr;
+    grid-template-columns: 150px 10fr;
     grid-gap: 5px;
     grid-template-areas:
         "h h h"
@@ -24,13 +24,13 @@
 
 @media (max-width:760px) {
     .app_wrapper {
-        grid-template-columns: 3fr 10fr;
+        grid-template-columns: 150px 10fr;
     }
 }
 
 @media (max-width:560px) {
     .app_wrapper {
-        grid-template-columns: 4fr 10fr;
+        grid-template-columns: 150px 10fr;
         min-width: 440px;
     }
 }
