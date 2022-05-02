@@ -24,17 +24,17 @@ let state = {
     messagesPage: {
         usersData: [
             {
-                img: 'https://i.pinimg.com/736x/1f/f5/72/1ff572cda8eaaa77a55c519c4cf80779.jpg',
+                img: 'https://ru.hellomagazine.com/uploads/620fba3937d2d.jpg',
                 message: 'hi Lorem ipsum dolor sit amet consectetur adipisicing elit.',
                 name: 'Adriana'
             },
             {
-                img: 'https://i.pinimg.com/736x/1f/f5/72/1ff572cda8eaaa77a55c519c4cf80779.jpg',
+                img: 'https://www.svetzeny.cz/sites/default/files/public/styles/gallery_page_xl/public/2022-03/shutterstock377356300_0.jpg?itok=ARJT6N_S',
                 message: 'Hello',
                 name: 'Johnny'
             },
             {
-                img: 'https://i.pinimg.com/736x/1f/f5/72/1ff572cda8eaaa77a55c519c4cf80779.jpg',
+                img: 'https://www.kkkkkkkkk.net/media/27178/full',
                 message: 'What`s u name?',
                 name: 'Martina'
             },

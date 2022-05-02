@@ -1,4 +1,5 @@
-.dialogs {
+.dialog_one_person {
+    margin-top: 100px;
     border-radius: 5px;
     background-color: rgb(215, 215, 215);
     display: grid;
@@ -7,14 +8,9 @@
     margin-bottom: 3px;
 }
 
-.user_dialog a {
-    text-decoration: none;
-    color: black;
-}
-
-.user_dialog img {
-    width: 40px;
-    height: 40px;
+.dialog_one_person img {
+    width: 60px;
+    height: 50px;
     border-radius: 25px;
 }
 
@@ -36,4 +32,14 @@
     margin-bottom: 2px;
     text-align: center;
     overflow: hidden;
+}
+
+.button {
+    border-radius: 5px;
+    background-color: rgb(182, 84, 228);
+}
+
+.textarea {
+    border-radius: 5px;
+    padding-top: 10px;
 }
