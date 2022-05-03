@@ -1,3 +1,5 @@
+import { rerenderTree } from '../render/render';
+
 let state = {
     profilePage: {
         posts: [
@@ -79,5 +81,22 @@ let state = {
         ],
     },
 };
+
+// let addUser = (userName) => {
+//     state.messagesPage.usersData.name = userName;
+// }
+let counter = 3;
+
+export let addPost = (postMessage) => {
+    let newPost = {
+        key: counter++,
+        img: 'https://i.pinimg.com/736x/1f/f5/72/1ff572cda8eaaa77a55c519c4cf80779.jpg',
+        message: postMessage,
+        likesCount: 0,
+    };
+    state.profilePage.posts.push(newPost);
+    rerenderTree(state);
+}
+
 
 export default state;

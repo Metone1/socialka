@@ -10,9 +10,10 @@ const MyPosts = (props) => {
         return < OthePost key={post.key} img={post.img} message={post.message} likesCount={post.likesCount} />
     });
 
-    let btnClick = () => {
+    let createMyNewPost = () => {
         let text = create_new_post.current.value;
-        console.log(text);
+        props.addPost(text);
+        create_new_post.current.value = '';
     };
 
     return (
@@ -21,7 +22,7 @@ const MyPosts = (props) => {
                 <h3>My posts</h3>
                 <div className={styles.myNewPost}>
                     <textarea ref={create_new_post}></textarea>
-                    <button onClick={btnClick}></button>
+                    <button onClick={createMyNewPost}></button>
                 </div>
             </div>
             <div>
