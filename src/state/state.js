@@ -4,24 +4,25 @@ let state = {
     profilePage: {
         posts: [
             {
-                key: 0,
+                id: 1,
                 img: 'https://i.pinimg.com/736x/1f/f5/72/1ff572cda8eaaa77a55c519c4cf80779.jpg',
                 message: 'Why nodoby love me?',
                 likesCount: 12,
             },
             {
-                key: 1,
+                id: 2,
                 img: 'https://i.pinimg.com/736x/1f/f5/72/1ff572cda8eaaa77a55c519c4cf80779.jpg',
                 message: 'Hello',
                 likesCount: 18,
             },
             {
-                key: 2,
+                id: 3,
                 img: 'https://i.pinimg.com/736x/1f/f5/72/1ff572cda8eaaa77a55c519c4cf80779.jpg',
                 message: 'hi, u know me?',
                 likesCount: 4,
             },
         ],
+        newPostText: '',
     },
     messagesPage: {
         usersData: [
@@ -87,14 +88,20 @@ let state = {
 // }
 let counter = 3;
 
-export let addPost = (postMessage) => {
+export let addPost = () => {
     let newPost = {
-        key: counter++,
+        id: ++counter,
         img: 'https://i.pinimg.com/736x/1f/f5/72/1ff572cda8eaaa77a55c519c4cf80779.jpg',
-        message: postMessage,
+        message: state.profilePage.newPostText,
         likesCount: 0,
     };
     state.profilePage.posts.push(newPost);
+    state.profilePage.newPostText = '';
+    rerenderTree(state);
+}
+
+export let updateNewPostChange = (message) => {
+    state.profilePage.newPostText = message;
     rerenderTree(state);
 }
 
