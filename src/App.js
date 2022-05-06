@@ -7,17 +7,18 @@ import News from './components/News/News';
 import Music from './components/Music/Music';
 import Settings from './components/Settings/Settings';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import store from './store/store';
 
 const App = (props) => {
   return (
     <BrowserRouter>
       <div className="app_wrapper">
         <Header />
-        <Navigation sidebar={props.state} />
+        <Navigation store={props.store.getState().sidebar} />
         <div className='app_wrapper_content'>
           <Routes>
-            <Route path='/messages/*' element={<Dialogs usersData={props.state.messagesPage.usersData} />} />
-            <Route path='/profile' element={<Profile posts={props.state.profilePage} addPost={props.addPost} updateNewPostChange={props.updateNewPostChange} />} />
+            <Route path='/messages/*' element={<Dialogs store={props.store.getState().messagesPage} />} />
+            <Route path='/profile' element={<Profile store={props.store.getState().profilePage} dispatch={props.store.dispatch.bind(store)} />} />
             <Route path='/news' element={<News />} />
             <Route path='/music' element={<Music />} />
             <Route path='/settings' element={<Settings />} />

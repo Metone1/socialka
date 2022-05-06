@@ -1,3 +1,10 @@
+.area_posts {
+    background-color: rgb(235, 235, 235);
+    border-radius: 5px;
+    padding: 3px;
+    margin-top: 5px;
+}
+
 .posts {
     background-color: rgb(255, 255, 255);
     border-radius: 5px;
@@ -11,18 +18,21 @@
 }
 
 .myNewPost {
-    border: 1px solid black;
     border-radius: 5px;
     text-align: center;
     padding: 5px;
 }
 
 .myNewPost button {
-    width: 50px;
+    width: 100px;
     height: 25px;
     border-radius: 5px;
     background-color: blueviolet;
-    position: relative;
-    left: 10px;
-    bottom: 7px;
+}
+
+.textarea {
+    width: 470px;
+    height: 50px;
+    resize: none;
+    border-radius: 5px;
 }
