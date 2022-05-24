@@ -1,6 +1,8 @@
 import styles from './MyPosts.module.css';
 import OthePost from './OthePost/OthePost';
 import React from 'react';
+import { addPostActionCreator } from '../../../store/store';
+import { updateNewPostChange } from '../../../store/store';
 
 const MyPosts = (props) => {
     let create_new_post = React.createRef();
@@ -9,13 +11,12 @@ const MyPosts = (props) => {
         return < OthePost key={post.id} img={post.img} message={post.message} likesCount={post.likesCount} />
     });
     let createMyNewPost = () => {
-        props.dispatch({ type: 'ADD_POST' });
+        props.dispatch(addPostActionCreator());
     };
 
     let onPostChange = () => {
         let text = create_new_post.current.value;
-        props.dispatch({ type: 'UPDATE_NEW_POST_CHANGE', message: text });
-        console.log(props.dispatch)
+        props.dispatch(updateNewPostChange(text));
     }
 
     return (

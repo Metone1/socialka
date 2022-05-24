@@ -1,4 +1,6 @@
 let counter = 3;
+const addPost = 'ADD POST';
+const updatePost = 'UPDATE_NEW_POST_CHANGE';
 
 const store = {
     _state: {
@@ -91,20 +93,22 @@ const store = {
     subscribe(observer) {
         this._subscriber = observer;
     },
-
     dispatch(action) {
-        if (action.type === 'ADD_POST') {
-            let newPost = {
-                id: ++counter,
-                img: 'https://i.pinimg.com/736x/1f/f5/72/1ff572cda8eaaa77a55c519c4cf80779.jpg',
-                message: this._state.profilePage.newPostText,
-                likesCount: 0,
-            };
-            this._state.profilePage.posts.unshift(newPost);
-            this._state.profilePage.newPostText = '';
-            this._subscriber();
+        if (action.type === addPost) {
+            if (this._state.profilePage.newPostText === '') return;
+            else {
+                let newPost = {
+                    id: ++counter,
+                    img: 'https://i.pinimg.com/736x/1f/f5/72/1ff572cda8eaaa77a55c519c4cf80779.jpg',
+                    message: this._state.profilePage.newPostText,
+                    likesCount: 0,
+                };
+                this._state.profilePage.posts.unshift(newPost);
+                this._state.profilePage.newPostText = '';
+                this._subscriber();
+            }
         }
-        else if (action.type === 'UPDATE_NEW_POST_CHANGE') {
+        else if (action.type === updatePost) {
             this._state.profilePage.newPostText = action.message;
             this._subscriber();
         }
@@ -112,3 +116,9 @@ const store = {
 };
 
 export default store;
+
+export const addPostActionCreator = () => ({ type: addPost });
+export const updateNewPostChange = (text) => {
+    return { type: updatePost, message: text }
+};
+
