@@ -1,12 +1,17 @@
 import styles from './DialogWithOnePerson.module.css'
 import React from 'react';
+import { sendMessageCreator, updateNewMessageBodyCreator } from '../../../store/store';
+
 
 const DialogWithOnePerson = (props) => {
 
-    let text = React.createRef();
+    let updateBodyMessage = (event) => {
+        let BodyMessage = event.target.value;
+        props.dispatch(updateNewMessageBodyCreator(BodyMessage));
+    };
 
-    let pushMessage = () => {
-        console.log(text.current.value)
+    let sendMessage = () => {
+        props.dispatch(sendMessageCreator());
     };
 
     return (
@@ -17,8 +22,8 @@ const DialogWithOnePerson = (props) => {
             <div className={styles.message}>
                 {props.data.message}
             </div>
-            <button onClick={pushMessage} className={styles.button}>click</button>
-            <textarea className={styles.textarea} ref={text}></textarea>
+            <button onClick={sendMessage} className={styles.button}>click</button>
+            <textarea onChange={updateBodyMessage} value={props.newMessage} placeholder='enter message' className={styles.textarea}></textarea>
         </div>
     )
 }

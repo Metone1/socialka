@@ -17,7 +17,7 @@ const App = (props) => {
         <Navigation store={props.store.getState().sidebar} />
         <div className='app_wrapper_content'>
           <Routes>
-            <Route path='/messages/*' element={<Dialogs store={props.store.getState().messagesPage} />} />
+            <Route path='/messages/*' element={<Dialogs store={props.store.getState().messagesPage} dispatch={props.store.dispatch.bind(store)} />} />
             <Route path='/profile' element={<Profile store={props.store.getState().profilePage} dispatch={props.store.dispatch.bind(store)} />} />
             <Route path='/news' element={<News />} />
             <Route path='/music' element={<Music />} />

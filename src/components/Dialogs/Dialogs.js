@@ -5,11 +5,11 @@ import DialogWithOnePerson from './DialogWithOnePerson/DialogWithOnePerson';
 
 const Dialogs = (props) => {
     let mapUsersData = props.store.usersData.map(user => {
-        return <DialogsWithUsers key={user.name} name={user.name} img={user.img} message={user.message} />;
+        return <DialogsWithUsers key={user.id} name={user.name} img={user.img} message={user.message} />;
     });
 
     let mapUsersRoute = props.store.usersData.map(user => {
-        return <Route key={user.name} path={user.name} element={<DialogWithOnePerson data={user} />} />;
+        return <Route key={user.id} path={user.name} element={<DialogWithOnePerson data={user} newMessage={props.store.newMessageBody} dispatch={props.dispatch} />} />;
     });
 
     return (

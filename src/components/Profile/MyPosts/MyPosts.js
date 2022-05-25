@@ -1,11 +1,9 @@
 import styles from './MyPosts.module.css';
 import OthePost from './OthePost/OthePost';
 import React from 'react';
-import { addPostActionCreator } from '../../../store/store';
-import { updateNewPostChange } from '../../../store/store';
+import { addPostActionCreator, updateNewPostChange } from '../../../store/store';
 
 const MyPosts = (props) => {
-    let create_new_post = React.createRef();
 
     let posts = props.store.posts.map(post => {
         return < OthePost key={post.id} img={post.img} message={post.message} likesCount={post.likesCount} />
@@ -14,8 +12,8 @@ const MyPosts = (props) => {
         props.dispatch(addPostActionCreator());
     };
 
-    let onPostChange = () => {
-        let text = create_new_post.current.value;
+    let onPostChange = (e) => {
+        let text = e.target.value;
         props.dispatch(updateNewPostChange(text));
     }
 
@@ -24,7 +22,7 @@ const MyPosts = (props) => {
             <div className={styles.posts}>
                 <h3>My posts</h3>
                 <div className={styles.myNewPost}>
-                    <textarea className={styles.textarea} onChange={onPostChange} ref={create_new_post} value={props.store.newPostText} />
+                    <textarea className={styles.textarea} onChange={onPostChange} />
                     <button onClick={createMyNewPost}>Add new post</button>
                 </div>
             </div>

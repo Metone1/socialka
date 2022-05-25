@@ -1,6 +1,8 @@
 let counter = 3;
 const addPost = 'ADD POST';
 const updatePost = 'UPDATE_NEW_POST_CHANGE';
+const updateNewMessageBody = 'UPDATE_NEW_MESSAGE_BODY';
+const sendMessage = 'SEND_MESSAGE';
 
 const store = {
     _state: {
@@ -30,21 +32,25 @@ const store = {
         messagesPage: {
             usersData: [
                 {
+                    id: 0,
                     img: 'https://ru.hellomagazine.com/uploads/620fba3937d2d.jpg',
-                    message: 'hi Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-                    name: 'Adriana'
+                    name: 'Adriana',
+                    message: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi nemo quo quae eaque corporis, dolorum beatae iste ad unde molestias et id nihil hic recusandae earum fugit in delectus eligendi.',
                 },
                 {
+                    id: 1,
                     img: 'https://www.svetzeny.cz/sites/default/files/public/styles/gallery_page_xl/public/2022-03/shutterstock377356300_0.jpg?itok=ARJT6N_S',
+                    name: 'Johnny',
                     message: 'Hello',
-                    name: 'Johnny'
                 },
                 {
+                    id: 2,
                     img: 'https://www.kkkkkkkkk.net/media/27178/full',
+                    name: 'Martina',
                     message: 'What`s u name?',
-                    name: 'Martina'
                 },
             ],
+            newMessageBody: '',
         },
         sidebar: {
             friends: [
@@ -112,13 +118,27 @@ const store = {
             this._state.profilePage.newPostText = action.message;
             this._subscriber();
         }
+        else if (action.type === updateNewMessageBody) {
+            this._state.messagesPage.newMessageBody = action.body;
+            this._subscriber();
+        }
+        else if (action.type === sendMessage) {
+            let body = this._state.messagesPage.newMessageBody;
+            this._state.messagesPage.newMessageBody = '';
+            this._state.messagesPage.usersData.push({ id: 4, img: '', name: '', message: body });
+            this._subscriber();
+        }
     }
 };
-
-export default store;
 
 export const addPostActionCreator = () => ({ type: addPost });
 export const updateNewPostChange = (text) => {
     return { type: updatePost, message: text }
 };
+export const sendMessageCreator = (id) => ({ type: sendMessage });
+export const updateNewMessageBodyCreator = (bodyMessage) => ({ type: updateNewMessageBody, body: bodyMessage });
+
+export default store;
+
+
 
