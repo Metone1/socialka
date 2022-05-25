@@ -1,4 +1,7 @@
-let counter = 3;
+import messagesReducer from './messages_reducer';
+import profileReducer from './profile_reducer';
+import sidebarReducer from './sidebar_reducer';
+
 const addPost = 'ADD POST';
 const updatePost = 'UPDATE_NEW_POST_CHANGE';
 const updateNewMessageBody = 'UPDATE_NEW_MESSAGE_BODY';
@@ -100,43 +103,13 @@ const store = {
         this._subscriber = observer;
     },
     dispatch(action) {
-        if (action.type === addPost) {
-            if (this._state.profilePage.newPostText === '') return;
-            else {
-                let newPost = {
-                    id: ++counter,
-                    img: 'https://i.pinimg.com/736x/1f/f5/72/1ff572cda8eaaa77a55c519c4cf80779.jpg',
-                    message: this._state.profilePage.newPostText,
-                    likesCount: 0,
-                };
-                this._state.profilePage.posts.unshift(newPost);
-                this._state.profilePage.newPostText = '';
-                this._subscriber();
-            }
-        }
-        else if (action.type === updatePost) {
-            this._state.profilePage.newPostText = action.message;
-            this._subscriber();
-        }
-        else if (action.type === updateNewMessageBody) {
-            this._state.messagesPage.newMessageBody = action.body;
-            this._subscriber();
-        }
-        else if (action.type === sendMessage) {
-            let body = this._state.messagesPage.newMessageBody;
-            this._state.messagesPage.newMessageBody = '';
-            this._state.messagesPage.usersData.push({ id: 4, img: '', name: '', message: body });
-            this._subscriber();
-        }
+        this._state.profilePage = profileReducer(this._state.profilePage, action);
+        this._state.messagesPage = messagesReducer(this._state.messagesPage, action);
+        this._state.sidebar = sidebarReducer(this._state.sidebar, action);
+
+        this._subscriber();
     }
 };
-
-export const addPostActionCreator = () => ({ type: addPost });
-export const updateNewPostChange = (text) => {
-    return { type: updatePost, message: text }
-};
-export const sendMessageCreator = (id) => ({ type: sendMessage });
-export const updateNewMessageBodyCreator = (bodyMessage) => ({ type: updateNewMessageBody, body: bodyMessage });
 
 export default store;
 

@@ -1,6 +1,6 @@
 import styles from './DialogWithOnePerson.module.css'
 import React from 'react';
-import { sendMessageCreator, updateNewMessageBodyCreator } from '../../../store/store';
+import { sendMessageCreator, updateNewMessageBodyCreator } from '../../../store/messages_reducer';
 
 
 const DialogWithOnePerson = (props) => {

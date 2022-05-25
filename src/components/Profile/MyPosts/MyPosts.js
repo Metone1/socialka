@@ -1,10 +1,9 @@
 import styles from './MyPosts.module.css';
 import OthePost from './OthePost/OthePost';
 import React from 'react';
-import { addPostActionCreator, updateNewPostChange } from '../../../store/store';
+import { addPostActionCreator, updateNewPostChange } from '../../../store/profile_reducer';
 
 const MyPosts = (props) => {
-
     let posts = props.store.posts.map(post => {
         return < OthePost key={post.id} img={post.img} message={post.message} likesCount={post.likesCount} />
     });
@@ -22,7 +21,7 @@ const MyPosts = (props) => {
             <div className={styles.posts}>
                 <h3>My posts</h3>
                 <div className={styles.myNewPost}>
-                    <textarea className={styles.textarea} onChange={onPostChange} />
+                    <textarea className={styles.textarea} value={props.store.newPostText} onChange={onPostChange} />
                     <button onClick={createMyNewPost}>Add new post</button>
                 </div>
             </div>
