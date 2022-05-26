@@ -1,17 +1,13 @@
 import styles from './DialogWithOnePerson.module.css'
 import React from 'react';
-import { sendMessageCreator, updateNewMessageBodyCreator } from '../../../store/messages_reducer';
-
 
 const DialogWithOnePerson = (props) => {
-
-    let updateBodyMessage = (event) => {
-        let BodyMessage = event.target.value;
-        props.dispatch(updateNewMessageBodyCreator(BodyMessage));
+    let updateBodyMessage = (e) => {
+        props.updateBodyMessage(e.target.value);
     };
 
     let sendMessage = () => {
-        props.dispatch(sendMessageCreator());
+        props.sendMessage();
     };
 
     return (
@@ -23,10 +19,9 @@ const DialogWithOnePerson = (props) => {
                 {props.data.message}
             </div>
             <button onClick={sendMessage} className={styles.button}>click</button>
-            <textarea onChange={updateBodyMessage} value={props.newMessage} placeholder='enter message' className={styles.textarea}></textarea>
+            <textarea onChange={updateBodyMessage} value={props.text.newMessageBody} placeholder='enter message' className={styles.textarea}></textarea>
         </div>
     )
 }
-
 
 export default DialogWithOnePerson;

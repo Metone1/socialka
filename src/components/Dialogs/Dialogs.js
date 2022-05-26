@@ -1,15 +1,15 @@
 import styles from './Dialogs.module.css';
 import DialogsWithUsers from './DialogsWithUsers/DialogsWithUsers';
 import { Routes, Route } from 'react-router-dom';
-import DialogWithOnePerson from './DialogWithOnePerson/DialogWithOnePerson';
+import DialogWithOnePersonContainer from './DialogWithOnePerson/DialogWithOnePersonContainer';
 
 const Dialogs = (props) => {
-    let mapUsersData = props.store.usersData.map(user => {
+    let mapUsersData = props.store.getState().messagesPage.usersData.map(user => {
         return <DialogsWithUsers key={user.id} name={user.name} img={user.img} message={user.message} />;
     });
 
-    let mapUsersRoute = props.store.usersData.map(user => {
-        return <Route key={user.id} path={user.name} element={<DialogWithOnePerson data={user} newMessage={props.store.newMessageBody} dispatch={props.dispatch} />} />;
+    let mapUsersRoute = props.store.getState().messagesPage.usersData.map(user => {
+        return <Route key={user.id} path={user.name} element={<DialogWithOnePersonContainer data={user} store={props.store} />} />;
     });
 
     return (
