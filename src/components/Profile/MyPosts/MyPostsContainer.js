@@ -1,9 +1,6 @@
 import React from 'react';
 import MyPosts from './MyPosts';
-import {
-    addPostActionCreator,
-    updateNewPostChangeActionCreator
-} from '../../../store/profile_reducer';
+import {addPostActionCreator,updateNewPostChangeActionCreator} from '../../../store/profile_reducer';
 
 const MyPostsContainer = (props) => {
     let createMyNewPost = () => {

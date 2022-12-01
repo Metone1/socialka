@@ -1,4 +1,4 @@
-import styles from './News.module.css';
+import '../../css/App.css'
 
 const News = (props) => {
 
@@ -16,13 +16,13 @@ const News = (props) => {
 
     const News = (props) => {
         const newsBlock = props.news.map((news, index) => {
-            return <div key={index} className={styles.news}>{news.news}</div>
+            return <div key={index} className="news__block">{news.news}</div>
         });
         return (<div>{newsBlock}</div>);
     };
 
     return (
-        <div className={styles.news_block}>
+        <div className="news">
             <h3>NEWS</h3>
             <News news={newsArray} />
         </div >

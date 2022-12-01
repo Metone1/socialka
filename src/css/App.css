@@ -1,0 +1,337 @@
+.header__container {
+  background-color: rgb(255, 255, 255);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  height: 60px;
+  margin-bottom: 10px;
+}
+.header__container img {
+  width: 70px;
+  height: 40px;
+  border-radius: 50%;
+}
+.header__container a {
+  color: rgb(31, 108, 76);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.navigation {
+  border-radius: 5px;
+  padding-bottom: 10px;
+  background-color: rgb(36, 36, 36);
+  min-width: 170px;
+  margin-right: 10px;
+}
+.navigation__image {
+  width: 30px;
+  height: 30px;
+  border-radius: 10px;
+}
+.navigation a {
+  background-color: rgb(255, 255, 255);
+  border-radius: 5px;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  padding: 2px 5px;
+  font-family: "Gill Sans", "Gill Sans MT", "Trebuchet MS", sans-serif;
+}
+
+.navigation__block {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+}
+.navigation__block:not(:last-child) {
+  margin-bottom: 6px;
+}
+
+.navigation a:hover {
+  background-color: rgba(147, 156, 252, 0.624);
+}
+.navigation .active {
+  background-color: rgba(31, 108, 76, 0.895);
+  color: beige;
+}
+.navigation .active:hover {
+  background-color: rgba(31, 108, 76, 0.895);
+}
+
+.friends {
+  margin-top: 65px;
+  border-radius: 5px;
+  padding: 5px;
+  background-color: rgb(255, 255, 255);
+}
+.friends__title {
+  text-align: center;
+  line-height: 1;
+}
+
+.friend {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 5px;
+       column-gap: 5px;
+}
+
+.friend__image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.profile {
+  display: flex;
+  -moz-column-gap: 5px;
+       column-gap: 5px;
+}
+
+.profile__photo {
+  background-color: #fff;
+  border-radius: 5px;
+  min-width: 150px;
+  height: 200px;
+}
+.profile__photo img {
+  width: 96%;
+  height: 97%;
+  margin: 2%;
+  border-radius: 5px;
+}
+
+.profile__discription {
+  background-color: #fff;
+  width: 100%;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.posts__block {
+  background-color: rgb(235, 235, 235);
+  border-radius: 5px;
+  padding: 3px;
+  margin-top: 5px;
+}
+
+.myNewPost {
+  background-color: rgb(255, 255, 255);
+  border-radius: 5px;
+}
+.myNewPost h3 {
+  text-align: center;
+  text-transform: uppercase;
+  margin: 5px auto;
+  padding-top: 5px;
+}
+.myNewPost__creator {
+  border-radius: 5px;
+  text-align: center;
+  padding: 5px;
+}
+.myNewPost button {
+  width: 100px;
+  height: 25px;
+  border-radius: 5px;
+  background-color: rgba(31, 108, 76, 0.895);
+  color: beige;
+  border: none;
+  cursor: pointer;
+}
+
+.textarea {
+  width: 90%;
+  height: 100px;
+  resize: none;
+  border-radius: 5px;
+  font-size: 16px;
+  padding: 10px;
+  word-spacing: -3px;
+}
+
+.othePosts {
+  margin-top: 5px;
+  border-radius: 5px;
+  background-color: rgb(235, 235, 235);
+  display: flex;
+  position: relative;
+}
+.othePosts__img {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  border: 1px solid white;
+  margin-right: 3px;
+}
+.othePosts__message {
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  padding-right: 40px;
+  background-color: #fff;
+  border-radius: 10px;
+  width: 100%;
+}
+.othePosts__likes {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+.othePosts__likes {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 2px;
+}
+
+.likes__img {
+  width: 25px;
+  min-height: 25px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 1px solid black;
+}
+
+.dialogs {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+.usersDialogs {
+  display: flex;
+  align-items: flex-start;
+  gap: 3px;
+}
+.usersDialogs__user {
+  background-color: #fff;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 3px;
+  min-width: 80px;
+  padding: 5px;
+}
+.usersDialogs__user a {
+  text-decoration: none;
+  color: rgb(29, 100, 49);
+}
+.usersDialogs__user img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.usersDialogs__messages {
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.OnePersonDialog {
+  margin-top: 100px;
+  border-radius: 5px;
+  background-color: rgb(215, 215, 215);
+  margin-bottom: 3px;
+  padding: 5px;
+}
+.OnePersonDialog__user {
+  display: flex;
+  align-items: flex-start;
+}
+.OnePersonDialog__img {
+  min-width: 40px;
+  max-width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 0 8px 0 7px;
+}
+.OnePersonDialog__message {
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 10px;
+  text-align: center;
+}
+.OnePersonDialog__send {
+  display: flex;
+  row-gap: 5px;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+}
+.OnePersonDialog__send button {
+  border-radius: 5px;
+  background-color: rgba(31, 108, 76, 0.895);
+  border: none;
+  color: beige;
+  padding: 5px;
+  cursor: pointer;
+  width: 100px;
+}
+.OnePersonDialog__textarea {
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 16px;
+  width: 80%;
+  resize: none;
+  border-radius: 5px;
+  word-spacing: -3px;
+}
+
+.news {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 10px;
+}
+.news h3 {
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.news__block {
+  padding: 10px;
+  border: 1px solid rgb(12, 79, 32);
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+#root {
+  background-color: rgb(36, 36, 36);
+  margin: 0 auto;
+}
+
+.app__wrapper {
+  margin: auto;
+  width: 80vw;
+  max-width: 860px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.flex__blocks {
+  display: flex;
+}
+
+.app__wrapper-content {
+  background-color: rgb(36, 36, 36);
+  border-radius: 5px;
+  width: 100%;
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  bottom: 0;
+  box-sizing: border-box;
+}

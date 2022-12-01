@@ -1,4 +1,4 @@
-import styles from './DialogWithOnePerson.module.css'
+import "../../../css/App.css";
 import React from 'react';
 
 const DialogWithOnePerson = (props) => {
@@ -11,15 +11,17 @@ const DialogWithOnePerson = (props) => {
     };
 
     return (
-        <div className={styles.dialog_one_person}>
-            <div className={styles.user_dialog}>
-                <img src={props.data.img} alt="img" />
+        <div className="OnePersonDialog">
+            <div className="OnePersonDialog__user">
+                <img className="OnePersonDialog__img" src={props.data.img} alt="img" />
+                <div className="OnePersonDialog__message">
+                    {props.data.message}
+                </div>
             </div>
-            <div className={styles.message}>
-                {props.data.message}
+            <div className="OnePersonDialog__send">
+                <textarea onChange={updateBodyMessage} value={props.text.newMessageBody} placeholder='enter message' className="OnePersonDialog__textarea"></textarea>
+                <button onClick={sendMessage}>click</button>
             </div>
-            <button onClick={sendMessage} className={styles.button}>click</button>
-            <textarea onChange={updateBodyMessage} value={props.text.newMessageBody} placeholder='enter message' className={styles.textarea}></textarea>
         </div>
     )
 }

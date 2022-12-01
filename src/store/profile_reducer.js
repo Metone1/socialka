@@ -23,7 +23,7 @@ let initialState = {
             likesCount: 4,
         },
     ],
-    newPostText: 'go',
+    newPostText: '',
 };
 
 const profileReducer = (state = initialState, action) => {

@@ -1,0 +1,48 @@
+.othePosts {
+   margin-top: 5px;
+   border-radius: 5px;
+   background-color: rgb(235, 235, 235);
+   display: flex;
+   position: relative;
+
+   &__img {
+      width: 50px;
+      height: 50px;
+      border-radius: 25px;
+      border: 1px solid white;
+      margin-right: 3px;
+   }
+
+   &__message {
+      display: flex;
+      align-items: center;
+      padding-left: 10px;
+      padding-right: 40px;
+      background-color: #fff;
+      border-radius: 10px;
+      width: 100%;
+   }
+
+   &__likes {
+      width: 25px;
+      height: 25px;
+      position: absolute;
+      top: 5px;
+      right: 5px;
+   }
+}
+
+.othePosts__likes {
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+   row-gap: 2px;
+}
+
+.likes__img {
+   width: 25px;
+   min-height: 25px;
+   border-radius: 50%;
+   cursor: pointer;
+   border: 1px solid black;
+}

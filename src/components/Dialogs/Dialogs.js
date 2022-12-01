@@ -1,4 +1,4 @@
-import styles from './Dialogs.module.css';
+import '../../css/App.css'
 import DialogsWithUsers from './DialogsWithUsers/DialogsWithUsers';
 import { Routes, Route } from 'react-router-dom';
 import DialogWithOnePersonContainer from './DialogWithOnePerson/DialogWithOnePersonContainer';
@@ -13,13 +13,11 @@ const Dialogs = (props) => {
     });
 
     return (
-        <div className={styles.dialogs}>
-            <div className={styles.dialogs_item}>
-                {mapUsersData}
-                <Routes>
-                    {mapUsersRoute}
-                </Routes>
-            </div>
+        <div className="dialogs">
+            {mapUsersData}
+            <Routes>
+                {mapUsersRoute}
+            </Routes>
         </div>
     );
 }

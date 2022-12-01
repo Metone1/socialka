@@ -1,7 +1,7 @@
-import styles from './Navigation.module.css';
+import '../../css/App.css'
 
 const selectedNavItem = () => {
-    return selectItem => selectItem.isActive ? styles.active : '';
+    return selectItem => selectItem.isActive ? 'active' : '';
 };
 
 export default selectedNavItem;
