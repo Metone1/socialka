@@ -1,6 +1,6 @@
 const updateNewMessageBody = 'UPDATE_NEW_MESSAGE_BODY';
 const sendMessage = 'SEND_MESSAGE';
-let counter = 3;
+let counter = 0;
 
 let initialState = {
     usersData: [
@@ -23,6 +23,7 @@ let initialState = {
             message: 'What`s u name?',
         },
     ],
+    myMessages: [],
     newMessageBody: '',
 };
 
@@ -36,8 +37,7 @@ const messagesReducer = (state = initialState, action) => {
             else {
                 let body = state.newMessageBody;
                 state.newMessageBody = '';
-                state.usersData.push({ id: ++counter, img: 'https://i.pinimg.com/736x/1f/f5/72/1ff572cda8eaaa77a55c519c4cf80779.jpg', name: 'Me', message: body });
-                ;
+                state.myMessages.push({ id: counter++, img: 'https://i.pinimg.com/736x/1f/f5/72/1ff572cda8eaaa77a55c519c4cf80779.jpg', message: body });
                 return state;
             }
         default:

@@ -14,20 +14,18 @@
    }
 
    &__message {
-      display: flex;
-      align-items: center;
-      padding-left: 10px;
-      padding-right: 40px;
+      padding: 15px 10px;
       background-color: #fff;
       border-radius: 10px;
-      width: 100%;
+      width: 725px;
+      overflow-wrap: break-word;
    }
 
    &__likes {
       width: 25px;
       height: 25px;
       position: absolute;
-      top: 5px;
+      bottom: 0;
       right: 5px;
    }
 }
@@ -37,6 +35,7 @@
    align-items: center;
    flex-direction: column;
    row-gap: 2px;
+   flex-direction: column-reverse;
 }
 
 .likes__img {
