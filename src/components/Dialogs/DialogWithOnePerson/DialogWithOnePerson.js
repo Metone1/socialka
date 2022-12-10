@@ -10,9 +10,6 @@ const DialogWithOnePerson = (props) => {
         props.sendMessage();
     };
 
-    console.log(props.text.myMessages)
-
-
     let mapMyMessages = props.text.myMessages.map(user => {
         return <div className="OnePersonDialog__user" key={user.id}>
             <img className="OnePersonDialog__img" src={user.img} />

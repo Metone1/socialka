@@ -20,9 +20,8 @@
 .navigation {
   border-radius: 5px;
   padding-bottom: 10px;
-  background-color: rgb(36, 36, 36);
-  min-width: 170px;
   margin-right: 10px;
+  width: 170px;
 }
 .navigation__image {
   width: 30px;
@@ -114,6 +113,7 @@
   border-radius: 5px;
   padding: 3px;
   margin-top: 5px;
+  width: 100%;
 }
 
 .myNewPost {
@@ -169,7 +169,7 @@
   padding: 15px 10px;
   background-color: #fff;
   border-radius: 10px;
-  width: 725px;
+  width: calc(100% - 100px);
   overflow-wrap: break-word;
 }
 .othePosts__likes {
@@ -259,7 +259,7 @@
   padding: 10px;
   background-color: #fff;
   border-radius: 10px;
-  max-width: 745px;
+  max-width: calc(100% - 65px);
   overflow-wrap: break-word;
 }
 .OnePersonDialog__send {
@@ -282,7 +282,7 @@
   border-radius: 5px;
   padding: 5px;
   font-size: 16px;
-  width: 80%;
+  width: 100%;
   resize: none;
   border-radius: 5px;
   word-spacing: -3px;
@@ -307,6 +307,8 @@
 }
 
 #root {
+  background: url("../images/chat-bg-pattern-dark.ad38368a9e8140d0ac7d.png") repeat;
+  background-size: 500px;
   background-color: rgb(36, 36, 36);
   margin: 0 auto;
 }
@@ -323,12 +325,12 @@
 
 .flex__blocks {
   display: flex;
+  width: 100%;
 }
 
 .app__wrapper-content {
-  background-color: rgb(36, 36, 36);
   border-radius: 5px;
-  width: 100%;
+  width: calc(100% - 170px);
 }
 
 *,

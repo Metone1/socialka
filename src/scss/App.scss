@@ -10,6 +10,8 @@
 @import "_music";
 
 #root {
+    background: url('../images/chat-bg-pattern-dark.ad38368a9e8140d0ac7d.png') repeat;
+    background-size: 500px;
     background-color: rgb(36, 36, 36);
     margin: 0 auto;
 }
@@ -26,12 +28,12 @@
 
 .flex__blocks {
     display: flex;
+    width: 100%;
 }
 
 .app__wrapper-content {
-    background-color: rgb(36, 36, 36);
     border-radius: 5px;
-    width: 100%;
+    width: calc(100% - 170px);
 }
 
 *,
