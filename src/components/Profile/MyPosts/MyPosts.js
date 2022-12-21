@@ -3,6 +3,8 @@ import OthePosts from './OthePosts/OthePosts';
 import React from 'react';
 
 const MyPosts = (props) => {
+
+    console.log(props)
     let posts = props.posts.posts.map(post => {
         return < OthePosts key={post.id} img={post.img} message={post.message} likesCount={post.likesCount} />
     });

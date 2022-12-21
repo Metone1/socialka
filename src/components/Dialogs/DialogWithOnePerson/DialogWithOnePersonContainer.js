@@ -1,20 +1,25 @@
-import React from 'react';
+import { connect } from 'react-redux';
 import { sendMessageCreator, updateNewMessageBodyCreator } from '../../../store/messages_reducer';
 import DialogWithOnePerson from './DialogWithOnePerson';
 
 
-const DialogWithOnePersonContainer = (props) => {
-    let updateBodyMessage = (BodyMessage) => {
-        props.store.dispatch(updateNewMessageBodyCreator(BodyMessage));
-    };
-
-    let sendMessage = () => {
-        props.store.dispatch(sendMessageCreator());
-    };
-
-    return (
-        <DialogWithOnePerson sendMessage={sendMessage} updateBodyMessage={updateBodyMessage} data={props.data} text={props.store.getState().messagesPage} />
-    );
+let mapStateToProps = (state) => {
+    return {
+        text: state.messagesPage,
+    }
 }
+
+let mapDispatchToProps = (dispatch) => {
+    return {
+        updateBodyMessage: (BodyMessage) => {
+            dispatch(updateNewMessageBodyCreator(BodyMessage))
+        },
+        sendMessage: () => {
+            dispatch(sendMessageCreator())
+        }
+    }
+}
+
+const DialogWithOnePersonContainer = connect(mapStateToProps, mapDispatchToProps)(DialogWithOnePerson)
 
 export default DialogWithOnePersonContainer;
